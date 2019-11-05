@@ -15,6 +15,3 @@ extension SimpleButton: View {
     }
 }
 
-    let doesntDoAnything = {
-        // I told you it doesn't do anything
-    }
