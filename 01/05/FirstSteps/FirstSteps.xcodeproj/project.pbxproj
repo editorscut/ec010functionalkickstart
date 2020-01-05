@@ -7,7 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		6230AA4A236C706900AA735D /* Connector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6230AA49236C706900AA735D /* Connector.swift */; };
+		6256402223C139DB0050721E /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6256402123C139DB0050721E /* Model.swift */; };
+		6256402423C2242F0050721E /* Connector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6256402323C2242F0050721E /* Connector.swift */; };
 		62BE2F9A2369EE8600922BB2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62BE2F992369EE8600922BB2 /* AppDelegate.swift */; };
 		62BE2F9C2369EE8600922BB2 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62BE2F9B2369EE8600922BB2 /* SceneDelegate.swift */; };
 		62BE2F9E2369EE8600922BB2 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62BE2F9D2369EE8600922BB2 /* ContentView.swift */; };
@@ -15,12 +16,12 @@
 		62BE2FA32369EE8800922BB2 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 62BE2FA22369EE8800922BB2 /* Preview Assets.xcassets */; };
 		62BE2FA62369EE8800922BB2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 62BE2FA42369EE8800922BB2 /* LaunchScreen.storyboard */; };
 		62BE2FAF2369FD5600922BB2 /* SimpleLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62BE2FAE2369FD5600922BB2 /* SimpleLabel.swift */; };
-		62C050BB236B8D57002C9A33 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62C050BA236B8D57002C9A33 /* Model.swift */; };
 		62C8AFA6236A0800001BF8FA /* SimpleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62C8AFA5236A0800001BF8FA /* SimpleButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		6230AA49236C706900AA735D /* Connector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Connector.swift; sourceTree = "<group>"; };
+		6256402123C139DB0050721E /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
+		6256402323C2242F0050721E /* Connector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Connector.swift; sourceTree = "<group>"; };
 		62BE2F962369EE8600922BB2 /* FirstSteps.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FirstSteps.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		62BE2F992369EE8600922BB2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		62BE2F9B2369EE8600922BB2 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -30,7 +31,6 @@
 		62BE2FA52369EE8800922BB2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		62BE2FA72369EE8800922BB2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		62BE2FAE2369FD5600922BB2 /* SimpleLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleLabel.swift; sourceTree = "<group>"; };
-		62C050BA236B8D57002C9A33 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		62C8AFA5236A0800001BF8FA /* SimpleButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -67,9 +67,9 @@
 				62BE2F9D2369EE8600922BB2 /* ContentView.swift */,
 				62BE2FAE2369FD5600922BB2 /* SimpleLabel.swift */,
 				62C8AFA5236A0800001BF8FA /* SimpleButton.swift */,
-				62C050BA236B8D57002C9A33 /* Model.swift */,
-				6230AA49236C706900AA735D /* Connector.swift */,
 				62BE2FAD2369EE9000922BB2 /* Support */,
+				6256402123C139DB0050721E /* Model.swift */,
+				6256402323C2242F0050721E /* Connector.swift */,
 			);
 			path = FirstSteps;
 			sourceTree = "<group>";
@@ -169,9 +169,9 @@
 				62BE2F9A2369EE8600922BB2 /* AppDelegate.swift in Sources */,
 				62BE2F9C2369EE8600922BB2 /* SceneDelegate.swift in Sources */,
 				62BE2FAF2369FD5600922BB2 /* SimpleLabel.swift in Sources */,
-				62C050BB236B8D57002C9A33 /* Model.swift in Sources */,
+				6256402223C139DB0050721E /* Model.swift in Sources */,
 				62BE2F9E2369EE8600922BB2 /* ContentView.swift in Sources */,
-				6230AA4A236C706900AA735D /* Connector.swift in Sources */,
+				6256402423C2242F0050721E /* Connector.swift in Sources */,
 				62C8AFA6236A0800001BF8FA /* SimpleButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

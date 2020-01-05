@@ -4,17 +4,24 @@ struct ContentView {
 }
 
 extension ContentView {
-    private func printAction() {
-        print("I was pressed")
+    private func decrease() {
+        print("decreased")
+    }
+    private func increase() {
+        print("increased")
     }
 }
 
 extension ContentView: View {
     var body: some View {
         VStack {
-            SimpleLabel(text: "I'm a label")
-            SimpleButton(text: "I'm a button",
-                         action: printAction)
+            SimpleLabel(text: "0")
+            HStack {
+                SimpleButton(text: "Decrease",
+                             action: decrease)
+                SimpleButton(text: "Increase",
+                             action: increase)
+            }
         }
     }
 }

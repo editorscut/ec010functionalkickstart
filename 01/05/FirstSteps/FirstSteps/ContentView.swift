@@ -1,7 +1,7 @@
 import SwiftUI
 
 struct ContentView {
-    @ObservedObject var connector = Connector()
+    @ObservedObject private var connector = Connector()
 }
 
 extension ContentView: View {
@@ -9,15 +9,11 @@ extension ContentView: View {
         VStack {
             SimpleLabel(text: connector.description)
             HStack {
-                SimpleButton(text: "decrease  ",
+                SimpleButton(text: "Decrease",
                              action: connector.decrease)
-                SimpleButton(text: "  increase",
+                SimpleButton(text: "Increase",
                              action: connector.increase)
             }
         }
     }
 }
-
-
-
-

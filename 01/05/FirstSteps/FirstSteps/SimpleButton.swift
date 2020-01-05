@@ -9,9 +9,7 @@ struct SimpleButton {
 
 extension SimpleButton: View {
     var body: some View {
-        Button(action: action){
-            Text(text)
-        }
+        Button(text,
+               action: action)
     }
 }
-
