@@ -8,5 +8,6 @@
         <page name='05ConsumingClosures'/>
         <page name='06Generics'/>
         <page name='07CustomOperators'/>
+        <page name='08Currying'/>
     </pages>
 </playground>

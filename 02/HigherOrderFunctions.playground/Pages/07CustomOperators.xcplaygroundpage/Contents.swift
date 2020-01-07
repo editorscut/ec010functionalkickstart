@@ -51,4 +51,25 @@ func >>> <A, B, C>(f: @escaping (A) -> B,
 4 |> {x in
     x * x - 1}
 
+func add(_ x: Int, and y: Int) -> Int {
+    x + y
+}
+
+extension Int {
+    func add(_ y: Int) -> Int {
+        self + y
+    }
+}
+
+add(3, and: 5)
+(3, 5) |> add
+3.add(5)
+
+evaluate((3, 5), using: add)
+
+
+
+
+
+
 //: [Next](@next)
