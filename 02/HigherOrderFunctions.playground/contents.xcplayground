@@ -9,5 +9,6 @@
         <page name='06Generics'/>
         <page name='07CustomOperators'/>
         <page name='08Currying'/>
+        <page name='09CallAsFunction'/>
     </pages>
 </playground>
