@@ -7,6 +7,7 @@
         <page name='05Result'/>
         <page name='06Writer'/>
         <page name='07TheMapPattern'/>
-        <page name='08Table'/>
+        <page name='08DeckOfCards'/>
+        <page name='09State'/>
     </pages>
 </playground>

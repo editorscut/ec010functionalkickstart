@@ -5,7 +5,7 @@ func compose<A, B, C>(_ f: @escaping (A) -> B,
     {x in g(f(x))}
 }
 
-func identity<A>(_ x: A) {
+func identity<A>(_ x: A) -> A {
     x
 }
 
@@ -44,6 +44,10 @@ stringArray
     .map(compose(emphasize,
                  with: numberOfCharacters))
 
+stringArray.map(identity)
 
+identity(stringArray)
+
+stringArray.map(identity) == identity(stringArray)
 
 //: [Next](@next)
