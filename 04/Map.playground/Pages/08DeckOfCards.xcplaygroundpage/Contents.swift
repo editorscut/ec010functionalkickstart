@@ -18,14 +18,13 @@ struct Card: Equatable {
     enum Suit: String, CaseIterable {
         case spades = "♠︎", diamonds = "♦︎"
         case clubs =  "♣︎", hearts = "♥︎"
-        
-        var color: Color {
-            switch self {
-            case .diamonds, .hearts:
-                return .red
-            case .clubs, .spades:
-                return .black
-            }
+    }
+    var color: Color {
+        switch suit {
+        case .diamonds, .hearts:
+            return .red
+        case .clubs, .spades:
+            return .black
         }
     }
 }
@@ -42,6 +41,9 @@ extension Card: Identifiable {
     }
 }
 
+//: End setup
+
+
 let freshDeck: [Card] = {
     let suits = Card.Suit.allCases
     let ranks = Card.Rank.allCases
@@ -56,23 +58,6 @@ let freshDeck: [Card] = {
     return freshDeck
 }()
 
-//: End setup
-
-
-class Deck {
-    let cards: [Card]
-    
-    init(_ cards: [Card] = freshDeck) {
-        self.cards = cards
-    }
-}
-
-extension Deck {
-    func map(_ transform: (Card) -> Card) -> Deck {
-        Deck(cards.map(transform))
-    }
-}
-
 func convertToQueenOfDiamonds(_ : Card) -> Card {
     Card(rank: .queen, suit: .diamonds)
 }
@@ -86,23 +71,23 @@ let toAceOfClubs
                           suit: .clubs))
 
 
-//var deck = Deck().map(convertToQueenOfDiamonds)
+//var deck = freshDeck.map(convertToQueenOfDiamonds)
 
-//var deck = Deck().map(toAceOfClubs)
+//var deck = freshDeck.map(toAceOfClubs)
 
 var deck
-    = Deck()
-        .map(changeCard(to: Card(rank: .ace,
-                                 suit: .clubs)))
+    = freshDeck
+//        .map(changeCard(to: Card(rank: .ace,
+//                                 suit: .clubs)))
 
 
 //: More setup code below
 
 struct TableView: View {
     var body: some View {
-        List(deck.cards){card in
+        List(deck){card in
             Text(card.description)
-                .foregroundColor(card.suit.color)
+                .foregroundColor(card.color)
         }.frame(width: 100,
                 height: 800,
                 alignment: .center)
