@@ -19,16 +19,16 @@ extension MutableCard: CustomStringConvertible {
 
 var threeOfClubs = MutableCard(.three,
                                of: .clubs)
+let originalRank = threeOfClubs.rank
 
-
-func changeRankOf(_ card: MutableCard,
+func changeRank(of card: MutableCard,
                   to rank: Rank) {
     card.rank = rank
 }
 
 threeOfClubs
 
-changeRankOf(threeOfClubs,
+changeRank(of: threeOfClubs,
              to: .queen)
 
 threeOfClubs
@@ -50,7 +50,7 @@ threeOfClubs.suit = .diamonds
 
 
 
-changeRankOf(threeOfClubs,
+changeRank(of: threeOfClubs,
              to: .queen)
 
 threeOfClubs
@@ -71,5 +71,32 @@ threeOfClubs.changeRank()
 threeOfClubs
 threeOfClubs.changeRank()
 threeOfClubs
+
+threeOfClubs.changeRank(to: originalRank)
+
+let numbers = ["zero", "one", "two", "three", "four"]
+
+//func switchElements(in array: [String],
+//                    at firstIndex: Int,
+//                    and secondIndex: Int) -> [String] {
+//    var array = array
+//    let first = array[firstIndex]
+//    array[firstIndex] = array[secondIndex]
+//    array[secondIndex] = first
+//    return array
+//}
+
+func switchElements(in array: [String],
+                    at firstIndex: Int,
+                    and secondIndex: Int) -> [String] {
+    var newArray = array
+    newArray[firstIndex] = array[secondIndex]
+    newArray[secondIndex] = array[firstIndex]
+    return newArray
+}
+
+
+switchElements(in: numbers,
+               at: 1, and: 3)
 
 //: [Next](@next)

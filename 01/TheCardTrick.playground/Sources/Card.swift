@@ -1,4 +1,4 @@
-public struct Card {
+public struct Card: Equatable {
     public let rank: Rank
     public let suit: Suit
     
