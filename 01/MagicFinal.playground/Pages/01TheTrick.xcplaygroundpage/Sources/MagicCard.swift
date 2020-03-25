@@ -1,4 +1,4 @@
-public struct Card {
+public struct MagicCard: Equatable {
     public let rank: Rank
     public let suit: Suit
     
@@ -9,10 +9,9 @@ public struct Card {
     }
 }
 
-extension Card: CustomStringConvertible {
+extension MagicCard: CustomStringConvertible {
     public var description: String {
         "\(rank) \(suit)"
     }
 }
-
 

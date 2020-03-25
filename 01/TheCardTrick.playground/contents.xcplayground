@@ -1,11 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <playground version='6.0' target-platform='macos'>
     <pages>
-        <page name='01ACard'/>
-        <page name='02TheMutatingCard'/>
-        <page name='03TheNonMutatingCard'/>
-        <page name='04ChangingACard'/>
-        <page name='05DestroyAndRestoreACard'/>
-        <page name='06TheDeck'/>
+        <page name='01TheTrick'/>
+        <page name='02ACard'/>
+        <page name='03TheMutatingCard'/>
+        <page name='04TheNonMutatingCard'/>
+        <page name='05ChangingACard'/>
+        <page name='06DestroyAndRestoreACard'/>
+        <page name='07TheDeck'/>
+        <page name='08PerformingTheTrick'/>
     </pages>
 </playground>

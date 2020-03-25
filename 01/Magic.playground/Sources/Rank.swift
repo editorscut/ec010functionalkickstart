@@ -1,3 +1,6 @@
+public let ranks = Rank.allCases
+public let numberOfRanks = ranks.count
+
 public enum Rank: String, CaseIterable {
     case ace = "A"
     case two = "2"
