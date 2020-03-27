@@ -3,5 +3,9 @@
     <pages>
         <page name='01TheTrick'/>
         <page name='02ACard'/>
+        <page name='03TheMutatingCard'/>
+        <page name='04TheNonMutatingCard'/>
+        <page name='05ChangingACard'/>
+        <page name='06DestroyAndRestoreACard'/>
     </pages>
 </playground>

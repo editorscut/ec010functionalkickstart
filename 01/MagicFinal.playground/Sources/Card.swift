@@ -9,6 +9,17 @@ public struct Card: Equatable {
     }
 }
 
+extension Card {
+    public func changed(to rank: Rank,
+                        of suit: Suit) -> Card {
+        Card(rank, of: suit)
+    }
+    
+    public func changed(to card: Card) -> Card {
+        card
+    }
+}
+
 extension Card: CustomStringConvertible {
     public var description: String {
         "\(rank) \(suit)"
