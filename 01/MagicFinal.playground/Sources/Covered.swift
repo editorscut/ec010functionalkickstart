@@ -20,3 +20,11 @@ public func revealed<T: CardCarrying>(_ covered: Covered<T> ) -> Card {
     covered.item.card
 }
 
+public func combine(_ card: Covered<BurnedCard>,
+                    and deck: Covered<Deck>) -> Covered<Deck> {
+    covered(
+        revealed(deck)
+            .topped(with: revealed(card))
+    )
+}
+

@@ -7,5 +7,7 @@
         <page name='04TheNonMutatingCard'/>
         <page name='05ChangingACard'/>
         <page name='06DestroyAndRestoreACard'/>
+        <page name='07TheDeck'/>
+        <page name='08PerformingTheTrick'/>
     </pages>
 </playground>
