@@ -2,7 +2,7 @@
 
 let (yourCard, remainingCards)
     = freshDeck
-        .selectedCard(at: 24)
+        .selectCard(at: 24)
 
 yourCard
 

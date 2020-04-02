@@ -1,7 +1,7 @@
 public typealias Deck = [Card]
 
 extension Deck {
-    public func selectedCard(at index: Int) -> (Card, Deck) {
+    public func selectCard(at index: Int) -> (Card, Deck) {
         guard index < count else {
             fatalError("The deck has fewer than \(index + 1) cards.")
         }
@@ -23,7 +23,7 @@ extension Deck {
     }
     
     public var selectTopCard: (Card, Deck) {
-        selectedCard(at: 0)
+        selectCard(at: 0)
     }
 }
 

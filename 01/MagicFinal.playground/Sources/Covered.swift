@@ -8,6 +8,9 @@ extension Covered: CustomStringConvertible {
     }
 }
 
+extension Covered:Equatable where T: Equatable {}
+
+
 public func covered<T>(_ item: T) -> Covered<T> {
     Covered(item: item)
 }

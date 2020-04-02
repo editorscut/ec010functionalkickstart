@@ -9,6 +9,7 @@ burned(yourCard)
 
 burned(ripped(yourCard))
 
+
 covered(yourCard)
 
 covered(ripped(yourCard))
@@ -29,14 +30,22 @@ let revealedCard = revealed(coveredCard)
 
 revealedCard == yourCard
 
+covered("Hello") == covered("World")
+
+covered("Hello") == covered("Hello")
+
+coveredCard == coveredCard
+
+
 yourCard == revealed(covered(burned(ripped(yourCard))))
 
-yourCard |> ripped |> burned |> covered |> revealed
+yourCard ==
+    yourCard |> ripped |> burned |> covered |> revealed
 
-yourCard
-    |> ripped
-    |> burned
-    |> covered
-    |> revealed
+youCard == yourCard
+                |> ripped
+                |> burned
+                |> covered
+                |> revealed
 
 //: [Next](@next)

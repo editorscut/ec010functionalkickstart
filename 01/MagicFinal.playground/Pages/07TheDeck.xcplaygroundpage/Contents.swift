@@ -10,9 +10,17 @@ let removed = numbers.remove(at: 1)
 
 numbers
 
+let result
+    = freshDeck
+        .selectCard(at: 200)
+
+result.0
+
+result.1
+
 let (yourCard, remainingCards)
       = freshDeck
-        .selectedCard(at: 2)
+        .selectCard(at: 2)
 
 yourCard
 

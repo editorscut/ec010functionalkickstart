@@ -16,12 +16,12 @@ changed(myCard,
         to: .seven,
         of: .hearts)
 
-func createCard(the rank: Rank,
+func makeCard(the rank: Rank,
                 of suit: Suit) -> Card {
     Card(rank, of: suit)
 }
 
-createCard(the: .seven,
+makeCard(the: .seven,
            of: .hearts)
 
 let this = myCard.changed(to: yourCard.rank,

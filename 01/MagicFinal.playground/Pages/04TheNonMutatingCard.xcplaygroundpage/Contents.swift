@@ -36,7 +36,7 @@ yourCard
 import Foundation
 
 func changeRank() -> Rank {
-    let double = Date().timeIntervalSince1970 * 100000
+    let double = Date().timeIntervalSince1970 * 100_000
     let int = Int(double) % numberOfRanks
     return ranks[int]
 }

@@ -1,3 +1,3 @@
 public protocol CardCarrying {
-    var card: Card {get}
+    var card: Card { get }
 }
