@@ -4,5 +4,6 @@
         <page name='01ASimpleLabel'/>
         <page name='02ASimpleButton'/>
         <page name='03MutatingState'/>
+        <page name='04DisplayingCards'/>
     </pages>
 </playground>
