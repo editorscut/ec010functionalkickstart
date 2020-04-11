@@ -26,3 +26,4 @@ extension Suit: CustomStringConvertible {
         rawValue
     }
 }
+

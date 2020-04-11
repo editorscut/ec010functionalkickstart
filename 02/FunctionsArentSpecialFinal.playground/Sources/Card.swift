@@ -11,6 +11,12 @@ public struct Card: Equatable {
     }
 }
 
+extension Card: Identifiable {
+    public var id: String {
+        description
+    }
+}
+
 extension Card {
     public var color: Color {
         suit.color

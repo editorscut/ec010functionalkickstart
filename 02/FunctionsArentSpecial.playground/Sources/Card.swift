@@ -1,8 +1,9 @@
 import SwiftUI
 
-public struct Card: Equatable {
+public struct Card: Equatable, Identifiable {
     public let rank: Rank
     public let suit: Suit
+    public let id = UUID()
     
     public init(_ rank: Rank,
                 of suit: Suit) {

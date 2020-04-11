@@ -5,5 +5,9 @@
         <page name='02ASimpleButton'/>
         <page name='03MutatingState'/>
         <page name='04DisplayingCards'/>
+        <page name='05MutableMiddle'/>
+        <page name='06PureFunctions'/>
+        <page name='07TrickDeck'/>
+        <page name='08OneForFun'/>
     </pages>
 </playground>
