@@ -12,10 +12,10 @@ extension SimpleCounter: View {
             SimpleLabel(text: deck[index].description,
                         color: deck[index].color)
             HStack {
-                SimpleButton(title: "Decrease",
+                SimpleButton(title: "Previous Card",
                              action: decrement,
                              isDisabled: isFirstCard)
-                SimpleButton(title: "Increase",
+                SimpleButton(title: " Next Card",
                              action: increment,
                              isDisabled: isLastCard)
             }
@@ -31,6 +31,7 @@ extension SimpleCounter {
         index += 1
     }
 }
+
 
 extension SimpleCounter {
     private var isFirstCard: Bool {
