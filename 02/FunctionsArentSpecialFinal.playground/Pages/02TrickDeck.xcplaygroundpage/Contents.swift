@@ -28,8 +28,8 @@ func alternatingQueenOfHearts(_ deck: Deck) -> Deck {
     for (index, card) in deck.enumerated() {
         newDeck
             .append(index.isMultiple(of: 2)
-                ? card
-                : Card(.queen, of: .hearts))
+                ? Card(.queen, of: .hearts)
+                : card)
     }
     return newDeck
 }
@@ -40,6 +40,8 @@ bringFourOfSpadesToTheTop(freshDeck)
 alternatingQueenOfHearts(freshDeck)
 
 alternatingQueenOfHearts(bringFourOfSpadesToTheTop(freshDeck))
+
+bringFourOfSpadesToTheTop(alternatingQueenOfHearts(freshDeck))
 
 let fourOnTop = bringFourOfSpadesToTheTop(freshDeck)
 

@@ -23,6 +23,9 @@ func incrementCount() {
     print(count)
 }
 
+incrementCount()
+
+
 let button = SimpleButton(title: "Tap Here",
                           action: incrementCount)
 import PlaygroundSupport

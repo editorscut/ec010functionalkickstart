@@ -47,7 +47,7 @@ extension Deck {
     func changeEveryOtherCard(to newCard: Card) -> Deck {
         var deck = Deck()
         for (index, card) in self.enumerated() {
-            deck.append(index.isMultiple(of: 2) ? card : newCard)
+            deck.append(index.isMultiple(of: 2) ? newCard : card)
         }
         return deck
     }
