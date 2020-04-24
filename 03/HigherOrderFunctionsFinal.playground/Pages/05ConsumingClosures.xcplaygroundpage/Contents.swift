@@ -36,5 +36,19 @@ evaluate(10,
 evaluate(4, using: line(slope: 3,
                         intercept: 2))
 
+extension Int {
+    func transformed(by f: (Int) -> Int) -> Int {
+        f(self)
+    }
+}
+
+4.transformed(by: fiveXMinusSeven)
+
+4.transformed{x in 3 * x + 2}
+
+4.transformed{3 * $0 + 2}
+
+
+
 
 //: [Next](@next)
