@@ -71,19 +71,19 @@ result = freshDeck.perform(allAces)
 
 result = freshDeck.perform(replaceCardEvery(3)(Card(.ace, of: .hearts)))
 
-func double(_ int: Int) -> Int {
-    int * 2
-}
-
-let ten = 5 |> double
-
-result = alternatingQueens |> freshDeck.perform
-
-result
-    = Card(.jack,
-           of: .hearts)
-    |> alternating
-    |> freshDeck.perform
+//func double(_ int: Int) -> Int {
+//    int * 2
+//}
+//
+//let ten = 5 |> double
+//
+//result = alternatingQueens |> freshDeck.perform
+//
+//result
+//    = Card(.jack,
+//           of: .hearts)
+//    |> alternating
+//    |> freshDeck.perform
 
 
 import PlaygroundSupport

@@ -10,11 +10,14 @@ public struct DeckView {
 
 extension DeckView: View {
     public var body: some View {
-        NavigationView {
+        return VStack{
             List(deck){card in
-                Text(card.description).foregroundColor(card.color)
-            }
-            .navigationBarTitle("The Deck")
+                HStack {
+                    Spacer()
+                    Text(card.description).foregroundColor(card.color)
+                    Spacer()
+                }
+            }.padding()
         }
     }
 }

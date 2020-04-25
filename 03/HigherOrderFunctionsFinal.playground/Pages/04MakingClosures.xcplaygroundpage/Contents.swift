@@ -60,7 +60,7 @@ let curriedLine: (Int) -> (Int) -> (Int) -> Int
         }
    }
 
-curriedLine(slope: 3)(5)(4)
+curriedLine(3)(5)(4)
 
 
 
