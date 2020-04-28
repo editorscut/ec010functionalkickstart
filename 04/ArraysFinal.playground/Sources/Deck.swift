@@ -1,4 +1,6 @@
 public typealias Deck = [Card]
+public typealias Hand = Deck
+
 
 extension Deck {
     public func selectCard(at index: Int) -> (Card, Deck) {
@@ -48,4 +50,32 @@ extension Array: CustomPlaygroundDisplayConvertible
         self.description
     }
 }
+
+extension Deck {
+    public func fauxDeal(_ numberOfCards: Int = 5,
+                     startingWith seed: Int = 0,
+                     jumpingBy delta: Int = 1) -> Hand {
+        var index = (seed * seed.signum()) % 52
+        var hand = Hand()
+        while hand.count < numberOfCards {
+            let newCard = self[index]
+            if !hand.contains(newCard) {
+                hand.append(newCard)
+            }
+            index = (index + delta) % 52
+        }
+        return hand
+    }
+    
+    public func deal(_ numberOfCards: Int) -> (hand: Hand, remainingCards: Deck) {
+        var hand = Hand()
+        var deck = self
+        
+        guard numberOfCards <= count else {return (hand, self)}
+        hand = Array(deck[..<numberOfCards])
+        deck.removeFirst(numberOfCards)
+        return (hand, deck)
+    }
+}
+
 

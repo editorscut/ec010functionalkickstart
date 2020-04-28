@@ -25,7 +25,7 @@ extension Card {
 
 extension Card: CustomStringConvertible {
     public var description: String {
-        "\(rank) \(suit)"
+        "\(rank)\(suit)"
     }
 }
 
@@ -35,7 +35,7 @@ extension Card: CustomPlaygroundDisplayConvertible {
     }
 }
 
-extension Card: Equatable, Comparable {
+extension Card: Equatable, Comparable, Hashable {
     public static func <(lhs: Card, rhs: Card) -> Bool {
         if lhs.suit == rhs.suit {
             return lhs.rank < rhs.rank

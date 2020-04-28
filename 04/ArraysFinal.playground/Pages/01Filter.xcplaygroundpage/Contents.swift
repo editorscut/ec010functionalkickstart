@@ -79,7 +79,7 @@ let faceCards
 }
 
 import PlaygroundSupport
-PlaygroundPage.current.setLiveView(DeckView(of: faceCards))
+//PlaygroundPage.current.setLiveView(DeckView(of: faceCards))
 
-//PlaygroundPage.current.setLiveView(FilterView())
+PlaygroundPage.current.setLiveView(FilterView())
 //: [Next](@next)
