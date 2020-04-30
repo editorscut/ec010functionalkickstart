@@ -60,6 +60,10 @@ result
 
 result
     = yourHand
+        .sorted(by: comparingRanks(of:to:))
+
+result
+    = yourHand
         .sorted(by: comparingSuits)
 
 result
