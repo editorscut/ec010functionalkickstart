@@ -42,7 +42,7 @@ precedencegroup Evaluate {
     associativity: left
 }
 
-infix operator |>: Evaluate
+infix operator |> : Evaluate
 
 
 func |> <Input, Output>(x: Input,
@@ -66,5 +66,15 @@ func add(_ int1: Int,
     int1 + int2
 }
 
+extension Int {
+    func add(_ y: Int) -> Int {
+        self + y
+    }
+}
 
+add(3, and: 5)
+
+(3, 5) |> add
+
+3.add(5)
 //: [Next](@next)
