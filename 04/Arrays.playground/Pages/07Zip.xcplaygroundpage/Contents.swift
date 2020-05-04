@@ -4,7 +4,8 @@ import Foundation
 let oneToTen = Array(1...10)
 let vowels = ["a", "e", "i", "o", "u"]
 
-func type(_ letter: String, repeating times: Int ) -> String {
+func replicate(_ letter: String,
+               times: Int ) -> String {
     var letters = ""
     guard times > 0 else {return letters}
     for _ in 1...times {

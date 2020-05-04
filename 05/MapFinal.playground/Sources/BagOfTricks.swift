@@ -52,6 +52,10 @@ public func compose<A, B, C>(_ f: @escaping (A) -> B,
     {x in g(f(x))}
 }
 
+public func identity<A>(_ x: A) -> A {
+    x
+}
+
 public func optionalCardFromFreshDeck(at index: Int) -> Card? {
     guard (0...51).contains(index) else {
         return nil

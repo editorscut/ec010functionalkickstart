@@ -79,3 +79,24 @@ extension Deck {
 }
 
 
+extension Deck {
+    public func cut(_ index: Int) -> Deck {
+        let topHalf = self[0..<index]
+        let bottomHalf = self[index...]
+        return Deck(bottomHalf + topHalf)
+    }
+    
+    public func shuffle(cutDepth index: Int) -> Deck {
+        let topHalf = self[0..<index]
+        let bottomHalf = self[index...]
+        let tuples = zip(topHalf, bottomHalf)
+        let shuffledPart
+            = tuples.reduce(Deck()){(deckSoFar, pair) in
+                deckSoFar + [pair.0, pair.1]
+        }
+        return shuffledPart
+            + ((index < count/2 )
+                ?  self[(index * 2)...]
+                : self[(count - index)..<index])
+    }
+}

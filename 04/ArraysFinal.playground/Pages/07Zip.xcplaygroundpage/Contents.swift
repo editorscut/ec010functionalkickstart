@@ -4,8 +4,8 @@ import Foundation
 let oneToTen = Array(1...10)
 let vowels = ["a", "e", "i", "o", "u"]
 
-func type(_ letter: String,
-          repeating times: Int ) -> String {
+func replicate(_ letter: String,
+               times: Int ) -> String {
     var letters = ""
     guard times > 0 else {return letters}
     for _ in 1...times {
@@ -44,7 +44,7 @@ Array(vowels.myZip(oneToTen)).description
 
 
 zip(vowels, oneToTen)
-    .map(type)
+    .map(replicate)
 
 func map2<S, T, Output>(_ array1: [S],
                         _ array2: [T],
@@ -58,8 +58,8 @@ func zip<S, T, Output>(_ array1: [S],
     zip(array1, array2).map(f)
 }
 
-zip(vowels, oneToTen, with: type)
-map2(vowels, oneToTen, with: type)
+zip(vowels, oneToTen, with: replicate)
+map2(vowels, oneToTen, with: replicate)
 
 func isPalindrome(_ string: String) -> Bool {
     let cleanedUpString
