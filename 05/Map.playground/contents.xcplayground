@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<playground version='6.0' target-platform='ios'>
+    <pages>
+        <page name='01TheMagicOfMap'/>
+        <page name='02TheMagicHat'/>
+        <page name='03ZeroOrOne'/>
+        <page name='04Optionals'/>
+        <page name='05Result'/>
+        <page name='06Writer'/>
+        <page name='07TheMapPattern'/>
+    </pages>
+</playground>

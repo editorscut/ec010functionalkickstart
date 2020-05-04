@@ -30,9 +30,11 @@ let revealedCard = revealed(coveredCard)
 
 revealedCard == yourCard
 
-covered("Hello") == covered("World")
 
 covered("Hello") == covered("Hello")
+
+covered("Hello") == covered("World")
+
 
 coveredCard == coveredCard
 
