@@ -1,16 +1,8 @@
 //: [Previous](@previous)
 
-makeQueenOfDiamonds(from: threeOfClubs)
+increment(threeOfClubs)
 
-makeQueenOfDiamonds(from: aceOfSpades)
+increment(queenOfDiamonds)
 
-replaceThreeWithQueen(threeOfClubs)
-
-do {
-try replaceThreeWithQueen(aceOfSpades)
-}
-catch {
-    print(error)
-}
 
 //: [Next](@next)

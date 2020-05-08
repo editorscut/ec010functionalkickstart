@@ -19,7 +19,7 @@ let magicHatContainingThreeOfClubs
     = MagicHat(contents: threeOfClubs)
 
 magicHatContainingThreeOfClubs
-    .map(makeQueenOfDiamonds)
+    .map(increment)
 
 cardFromFreshDeck(at: 17)
 
@@ -42,8 +42,12 @@ func disappearingBunnyTrick(_ bunny: Rabbit) -> InfiniteScarf {
 bunnyInMagicHat
     .map(disappearingBunnyTrick)
 
-safeCardFromFreshDeck(at: 17)
-
+do {
+    try safeCardFromFreshDeck(at: 17)
+}
+catch {
+    print(error)
+}
 
 do {
     try safeCardFromFreshDeck(at: 100)

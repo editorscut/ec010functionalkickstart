@@ -7,10 +7,10 @@ let card17 = resultCardFromFreshDeck(at: 17)
 let card100 = resultCardFromFreshDeck(at: 100)
 
 card17
-    .map(makeQueenOfDiamonds)
+    .map(increment)
 
 card100
-    .map(makeQueenOfDiamonds)
+    .map(increment)
 
 struct IsEmpty: Error, CustomDebugStringConvertible {
     var debugDescription: String {

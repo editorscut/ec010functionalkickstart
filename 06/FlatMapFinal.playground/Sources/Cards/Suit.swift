@@ -34,12 +34,3 @@ extension Suit: Equatable, Comparable {
         Suit.allCases.firstIndex(of: lhs)! < Suit.allCases.firstIndex(of: rhs)!
     }
 }
-
-extension Suit {
-    public static func + (suit: Suit, int: Int ) -> Suit {
-        guard let index = suits.firstIndex(of: suit) else {
-            fatalError("Suit was not a valid suit - should never fail")
-        }
-        return suits[(index + int) % numberOfSuits]
-    }
-}

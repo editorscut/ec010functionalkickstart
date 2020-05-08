@@ -48,7 +48,7 @@ result = freshDeck.sorted(by: comparingRanks)
 result = freshDeck.sorted(by: comparingSuits)
 
 let yourHand
-    = freshDeck.fauxDeal(2,
+    = freshDeck.fauxDeal(10,
                          startingWith: 7,
                          jumpingBy: 19)
 
@@ -66,11 +66,6 @@ result
     = yourHand
         .sorted(by: comparingSuits)
 
-result
-    = yourHand
-        .sorted(by: comparingRanks)
-        .sorted(by: comparingSuits)
-
 result = yourHand.sorted{
     if $0.suit == $1.suit {
         return $0.rank < $1.rank
@@ -79,6 +74,16 @@ result = yourHand.sorted{
 }
 
 
+result = yourHand
+    .sorted{$0.rank < $1.rank}
+    .sorted{$0.suit < $1.suit}
+
+
+result
+    = yourHand
+        .sorted(by: comparingRanks)
+        .sorted(by: comparingSuits)
+
 
 //result = result.sorted(by: comparingRanks).sorted(by: comparingSuits)
 
@@ -86,7 +91,7 @@ result = yourHand.sorted{
 
 import PlaygroundSupport
 //PlaygroundPage.current.setLiveView(DeckView(of: result))
-PlaygroundPage.current.setLiveView(HandView(of: result)
+PlaygroundPage.current.setLiveView(HandView(of: result))
 
 
 //: [Next](@next)

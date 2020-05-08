@@ -30,12 +30,3 @@ extension Rank: Equatable, Comparable {
         Rank.allCases.firstIndex(of: lhs)! < Rank.allCases.firstIndex(of: rhs)!
     }
 }
-
-extension Rank {
-    public static func + (rank: Rank, int: Int ) -> Rank {
-        guard let index = ranks.firstIndex(of: rank) else {
-            fatalError("Rank was not a valid rank - should never fail")
-        }
-        return ranks[(index + int) % numberOfRanks]
-    }
-}

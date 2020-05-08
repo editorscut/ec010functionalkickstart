@@ -8,8 +8,9 @@ public let aceOfSpades = Card(.ace,
                               of: .spades)
 
 
-public func makeQueenOfDiamonds(from card: Card) -> Card {
-    queenOfDiamonds
+public func increment(_ card: Card) -> Card {
+    Card(card.rank + 1,
+         of: card.suit + 1)
 }
 
 public func cardFromFreshDeck(at index: Int) -> Card {

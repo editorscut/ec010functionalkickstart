@@ -59,7 +59,7 @@ seventeenTrunk
 
 seventeenTrunk
     .map(cardFromFreshDeck)
-    .map(makeQueenOfDiamonds)
+    .map(increment)
 
 helloTrunk
     .map(emphasize)
