@@ -16,5 +16,12 @@ extension Point: CustomStringConvertible {
 }
 
 public func moveRight(_ point: Point) -> Point {
-    Point(x: point.x + 10, y: point.y)
+    Point(x: point.x + 10,
+          y: point.y)
 }
+
+public func moveDown(_ point: Point) -> Point {
+    Point(x: point.x,
+          y: point.y + 10)
+}
+

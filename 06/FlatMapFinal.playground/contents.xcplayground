@@ -2,6 +2,9 @@
 <playground version='6.0' target-platform='ios'>
     <pages>
         <page name='01Writer'/>
-        <page name='02Optional'/>
+        <page name='02ShinyTrunk'/>
+        <page name='03Result'/>
+        <page name='04Optional'/>
+        <page name='Optional'/>
     </pages>
 </playground>
