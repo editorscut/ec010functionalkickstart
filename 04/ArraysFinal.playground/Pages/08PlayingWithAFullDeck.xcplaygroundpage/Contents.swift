@@ -1,5 +1,7 @@
 //: [Previous](@previous)
 
+let shuffled = freshDeck.shuffled()
+
 var result = freshDeck
 
 extension Deck {

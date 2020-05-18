@@ -39,6 +39,7 @@ func movingDownInTrunk(_ point: Point) -> Point? {
 
 trunkWithPoint
     .map(movingRightInTrunk)
+    .debugDescription
 
 emptyTrunk
     .flatMap(movingRightInTrunk)
@@ -60,24 +61,20 @@ trunkWithPoint
     .flatMap(movingDownInTrunk)
 
 
-func emphasize(_ string: String) -> String? {
-    
-    string.uppercased() + "!"
+func abbreviate(_ string: String) -> String? {
+    guard let firstLetter = string.first else {return nil}
+    return firstLetter.uppercased() + "."
 }
 
-func numberOfCharacters(in string: String) -> Int? {
-    string.count
-}
 
 let hello: String? = "hello"
 
 hello
-    .flatMap(emphasize)
+    .map(abbreviate).debugDescription
 
 
 hello
-    .flatMap(emphasize)
-    .flatMap(numberOfCharacters)
+    .flatMap(abbreviate)?.debugDescription
 
 
 func cutDeck(to index: Int) -> (Deck) -> Deck? {
@@ -88,9 +85,9 @@ func cutDeck(to index: Int) -> (Deck) -> Deck? {
 }
 
 func shuffleDeck(to index: Int) -> (Deck) -> Deck? {
-      {deck in
-        guard index < deck.count && index >= 0 else {return nil}
-        return deck.shuffle(cutDepth: index)
+{deck in
+    guard index < deck.count && index >= 0 else {return nil}
+    return deck.shuffle(cutDepth: index)
     }
 }
 
@@ -105,6 +102,25 @@ deckInTrunk
     .flatMap(shuffleDeck(to: 27))
     .flatMap(cutDeck(to: 25))
 
+extension Deck {
+    func cutDeck(to index: Int) -> Deck? {
+        guard index < count && index >= 0 else {return nil}
+        return cut(index)
+    }
+    
+    func shuffleDeck(to index: Int) -> Deck? {
+        guard index < count && index >= 0 else {return nil}
+        return shuffle(cutDepth: index)
+    }
+}
+
+deckInTrunk?.shuffleDeck(to: 17)
+
+deckInTrunk?
+    .shuffleDeck(to: 17)?
+    .cutDeck(to: 24)?
+    .shuffleDeck(to: 27)?
+    .cutDeck(to: 25)
 
 
 //: [Next](@next)
