@@ -24,10 +24,6 @@ stringArray
     .map(emphasize)
     .map(numberOfCharacters)
 
-stringArray
-    .map(compose(emphasize,
-                 with: numberOfCharacters))
-
 freshDeck
     .map(diamonds)
 
@@ -36,6 +32,19 @@ identity(stringArray)
 stringArray.map(identity)
 
 stringArray.map(identity) == identity(stringArray)
+
+
+stringArray
+    .map(emphasize)
+    .map(numberOfCharacters)
+
+stringArray
+    .map(emphasize >>> numberOfCharacters)
+
+
+
+
+
 
 
 //: [Next](@next)

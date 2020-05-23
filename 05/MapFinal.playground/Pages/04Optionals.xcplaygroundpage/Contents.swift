@@ -60,6 +60,12 @@ emptyTrunk
 ShinyTrunk(containing: 17)
     .map(cardFromFreshDeck)
 
+["Just", "an", "example"].map(numberOfCharacters)
+let example: String? = "example"
+example.map(numberOfCharacters)
+let nothing: String? = nil
+nothing.map(numberOfCharacters)
+
 let anotherHelloTrunk: String? = "Hello"
 let anotherEmptyTrunk: String? = .none
 let another17Trunk: Int? = 17

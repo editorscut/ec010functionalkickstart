@@ -65,15 +65,5 @@ helloTrunk
     .map(emphasize)
     .map(numberOfCharacters)
 
-helloTrunk
-    .map(compose(emphasize,
-                 with: numberOfCharacters))
 
- emptyTrunk
-    .map(emphasize)
-    .map(numberOfCharacters)
-    
-emptyTrunk
-    .map(compose(emphasize,
-                 with: numberOfCharacters))
 //: [Next](@next)

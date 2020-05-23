@@ -50,15 +50,37 @@ func |> <Input, Output>(x: Input,
     f(x)
 }
 
+precedencegroup Compose {
+    associativity: left
+    higherThan: Evaluate
+}
+
+infix operator >>> : Compose
+
+func >>> <A, B, C>(f: @escaping (A) -> B,
+                   g: @escaping (B) -> C) -> (A) -> C {
+    {x in g(f(x))}
+}
+
 4 |> threeXPlusTwo
 
 4 |> threeXPlusTwo |> squared
+
+4 |> (threeXPlusTwo >>> squared)
+
 
 Card(.king,
      of: .clubs)
     |> changeAlternateCards
     |> reverse
     |> alternatingJackOfDiamonds
+
+let trick
+    = changeAlternateCards
+        >>> reverse
+        >>> alternatingJackOfDiamonds
+
+Card(.king, of: .clubs) |> trick
 
 
 func add(_ int1: Int,
