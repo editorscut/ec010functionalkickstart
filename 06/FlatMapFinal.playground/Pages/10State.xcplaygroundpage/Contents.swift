@@ -30,7 +30,7 @@ color1
 extension State where S == Deck, A == Card {
     func deal(_ count: Int,
               hand: Hand = Hand()) -> State<Deck, Hand> {
-        guard count > 0 else {return State<Deck, Hand>.just(hand)}
+        guard count > 0 else {return State<Deck, Hand>(just: hand)}
         return self.flatMap{card in
             return self.deal(count - 1, hand: hand + [card])
         }
@@ -48,7 +48,7 @@ extension State {
     func next(_ count: Int,
               accumulator: [A] = [A]()) -> State<S, [A]> {
         flatMap{a in
-            guard count > 0 else {return State<S, [A]>.just(accumulator)}
+            guard count > 0 else {return State<S, [A]>(just: accumulator)}
             return self.next(count - 1, accumulator: accumulator + [a])
         }
     }
@@ -68,7 +68,7 @@ extension State where S == Deck, A == Card {
     func next(where condition: @escaping (A) -> Bool) -> Self {
         flatMap{card in
             if condition(card) {
-                return State<S, A>.just(card)
+                return State<S, A>(just: card)
             } else {
                 print(card)
                 return self.next(where: condition)
@@ -85,7 +85,7 @@ extension State  {
     func next(where condition: @escaping (A) -> Bool) -> Self {
         flatMap{a in
             if condition(a) {
-                return State<S, A>.just(a)
+                return State<S, A>(just: a)
             } else {
                 print(a)
                 return self.next(where: condition)

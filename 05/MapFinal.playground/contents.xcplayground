@@ -2,7 +2,7 @@
 <playground version='6.0' target-platform='ios'>
     <pages>
         <page name='01TheMagicOfMap'/>
-        <page name='02TheMagicHat'/>
+        <page name='02OneAtATime'/>
         <page name='03ZeroOrOne'/>
         <page name='04Optionals'/>
         <page name='05Result'/>

@@ -49,4 +49,33 @@ bonusSizeOf("Hello")
 
 boolFrom("Hello")
 
+struct Reader<E, A> {
+    let f: (E) -> A
+    
+    func callAsFunction(_ base: E) -> A {
+        f(base)
+    }
+}
+
+extension Reader {
+    func map<Output>(_ transform: @escaping (A) -> Output)
+                                    -> Reader<E, Output> {
+        Reader<E, Output>{x in transform(self.f(x))}
+    }
+}
+
+let shout
+    = Reader<String, String>{string in
+        string.uppercased() + "!"
+    }
+
+let amount = shout.map{string in string.count}
+
+shout.f("hello")
+shout("hello")
+
+amount.f("hello")
+amount("hello")
+
+
 //: [Next](@next)

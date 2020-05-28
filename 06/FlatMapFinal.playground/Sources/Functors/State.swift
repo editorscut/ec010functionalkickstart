@@ -11,8 +11,8 @@ public struct State<S, A> {
 }
 
 extension State {
-    public static func just(_ a: A) -> Self {
-        State<S, A>{s in (a, s)}
+    public init(just a: A) {
+        self.run = {s in (a, s)}
     }
     
     public func map<Output>(_ transform: @escaping (A) -> Output)

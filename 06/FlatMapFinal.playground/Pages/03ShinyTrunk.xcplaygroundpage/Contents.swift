@@ -45,18 +45,6 @@ trunkWithPoint
     .map(movingRightInTrunk)
 
 
-extension ShinyTrunk {
-    func flatMap<Output>(_ transform: (WhatsInside) -> ShinyTrunk<Output>)
-        -> ShinyTrunk<Output> {
-            switch self {
-            case .empty:
-                return ShinyTrunk<Output>()
-            case .containing(let whatsInside):
-                return transform(whatsInside)
-            }
-    }
-}
-
 emptyTrunk
     .flatMap(movingRightInTrunk)
 
@@ -135,8 +123,5 @@ deckInTrunk
     .flatMap(cutDeck(to: 24))
     .flatMap(shuffleDeck(to: 27))
     .flatMap(cutDeck(to: 25))
-
-
-
 
 //: [Next](@next)

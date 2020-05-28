@@ -7,7 +7,7 @@ moveRight(origin)
 moveDown(moveRight(origin))
 
 let pointWriter = Writer(origin,
-                         log: "Starting at (0,0)")
+    log: "")
 
 pointWriter
     .map(moveRight)
@@ -20,13 +20,13 @@ pointWriter
 func loggingMoveRight(_ point: Point) -> Writer<Point> {
     let movedPoint = Point(x: point.x + 10, y: point.y)
     return Writer(movedPoint,
-                  log: "Moved right to \(movedPoint)")
+                  log: "Moved right from \(point) to \(movedPoint) \n")
 }
 
 func loggingMoveDown(_ point: Point) -> Writer<Point> {
     let movedPoint = Point(x: point.x, y: point.y + 10)
     return Writer(movedPoint,
-                  log: "Moved down to \(movedPoint)")
+                  log: "Moved down from \(point) to \(movedPoint) \n")
 }
 
 loggingMoveRight(origin)
@@ -48,22 +48,12 @@ let movedDownValue
         .map(loggingMoveDown)
 
 let movedDownLog
-    = movedRight.log + "\n"
-        + movedDownValue.log + "\n"
+    = movedRight.log
+        + movedDownValue.log
         + movedDownValue.value.log
 
 let movedDown = Writer(movedDownValue.value.value,
                        log: movedDownLog)
-
-extension Writer {
-    func flatMap<Output>(_ transform: (Value) -> Writer<Output>)
-        -> Writer<Output> {
-            let newWriter = transform(value)
-            let newLog = log + "\n" + newWriter.log
-            return Writer<Output>(newWriter.value,
-                                  log: newLog)
-    }
-}
 
 pointWriter
     .flatMap(loggingMoveRight)
@@ -75,7 +65,7 @@ pointWriter
 
 func numberOfCharacters(in string: String) -> Writer<Int> {
     Writer<Int>(string.count,
-                log: "There are \(string.count) characters in \(string)")
+                log: "There are \(string.count) characters in \(string) \n")
 }
 
 let hello = Writer("hello",
@@ -86,7 +76,7 @@ hello
 
 func emphasize(_ string: String) -> Writer<String> {
     Writer<String>(string.uppercased() + "!",
-                   log: "Uppercased and added '!'")
+                   log: "Uppercased and added '!' \n")
 }
 
 hello
@@ -96,19 +86,19 @@ hello
 func cutDeck(to index: Int) -> (Deck) -> Writer<Deck> {
 {deck in
     Writer<Deck>(deck.cut(index),
-                 log: "Cut the top \(index) cards off the deck")
+                 log: "Cut the top \(index) cards off the deck \n")
     }
 }
 
 func shuffleDeck(to index: Int) -> (Deck) -> Writer<Deck> {
       {deck in
         Writer<Deck>(deck.shuffle(cutDepth: index),
-                     log: "Shuffle deck to \(index)")
+                     log: "Shuffle deck to \(index) \n")
     }
 }
 
 let newDeck = Writer<Deck>(freshDeck,
-                           log: "Start with a fresh deck")
+                           log: "")
 
 newDeck
     .flatMap(shuffleDeck(to: 17))

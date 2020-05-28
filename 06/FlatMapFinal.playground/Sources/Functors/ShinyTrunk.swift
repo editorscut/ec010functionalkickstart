@@ -23,6 +23,18 @@ extension ShinyTrunk {
     }
 }
 
+extension ShinyTrunk {
+    public func flatMap<Output>(_ transform: (WhatsInside) -> ShinyTrunk<Output>)
+        -> ShinyTrunk<Output> {
+            switch self {
+            case .empty:
+                return ShinyTrunk<Output>()
+            case .containing(let whatsInside):
+                return transform(whatsInside)
+            }
+    }
+}
+
 extension ShinyTrunk: CustomStringConvertible {
     public var description: String {
         let type = WhatsInside.self
