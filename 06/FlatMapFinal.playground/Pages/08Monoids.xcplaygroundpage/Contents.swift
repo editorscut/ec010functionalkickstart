@@ -10,17 +10,17 @@ extension String: Monoid {
 
 
 let pointWriter
-    = Writer<Point, String>(just: origin)
+    = WriterM<Point, String>(just: origin)
 
-func loggingMoveRight(_ point: Point) -> Writer<Point, String> {
+func loggingMoveRight(_ point: Point) -> WriterM<Point, String> {
     let movedPoint = Point(x: point.x + 10, y: point.y)
-    return Writer(movedPoint,
+    return WriterM(movedPoint,
                   log: "Moved right from \(point) to \(movedPoint) \n")
 }
 
-func loggingMoveDown(_ point: Point) -> Writer<Point, String> {
+func loggingMoveDown(_ point: Point) -> WriterM<Point, String> {
     let movedPoint = Point(x: point.x, y: point.y + 10)
-    return Writer(movedPoint,
+    return WriterM(movedPoint,
                   log: "Moved down from \(point) to \(movedPoint) \n")
 }
 
@@ -39,19 +39,19 @@ extension Array: Monoid {
 
 
 let pointWriterArray
-    = Writer<Point, [Point]>(just: origin)
+    = WriterM<Point, [Point]>(just: origin)
 
 
 
-func loggingMoveRightArray(_ point: Point) -> Writer<Point, [Point]> {
+func loggingMoveRightArray(_ point: Point) -> WriterM<Point, [Point]> {
     let movedPoint = Point(x: point.x + 10, y: point.y)
-    return Writer(movedPoint,
+    return WriterM(movedPoint,
                   log: [movedPoint])
 }
 
-func loggingMoveDownArray(_ point: Point) -> Writer<Point, [Point]> {
+func loggingMoveDownArray(_ point: Point) -> WriterM<Point, [Point]> {
     let movedPoint = Point(x: point.x, y: point.y + 10)
-    return Writer(movedPoint,
+    return WriterM(movedPoint,
                   log: [movedPoint])
 }
 
@@ -59,8 +59,8 @@ pointWriterArray
     .flatMap(loggingMoveRightArray)
     .flatMap(loggingMoveDownArray)
 
-func loggingCurrentLocationArray(_ point: Point) -> Writer<Point, [Point]> {
-    return Writer(point,
+func loggingCurrentLocationArray(_ point: Point) -> WriterM<Point, [Point]> {
+    return WriterM(point,
                   log: [point])
 }
 

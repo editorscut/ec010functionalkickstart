@@ -1,4 +1,4 @@
-public struct Writer<Value> {
+public struct WriterM<Value> {
     public let value: Value
     public let log: String
     
@@ -13,24 +13,24 @@ public struct Writer<Value> {
     }
 }
 
-extension Writer {
+extension WriterM {
     public func map<Output>(_ transform: (Value) -> Output)
-        -> Writer<Output> {
-            Writer<Output>(transform(value),
+        -> WriterM<Output> {
+            WriterM<Output>(transform(value),
                                 log: log)
     }
 }
 
-extension Writer {
-    public func flatMap<Output>(_ transform: (Value) -> Writer<Output>)
-        -> Writer<Output> {
+extension WriterM {
+    public func flatMap<Output>(_ transform: (Value) -> WriterM<Output>)
+        -> WriterM<Output> {
             let newWriter = transform(value)
             let newLog = log + newWriter.log
-            return Writer<Output>(newWriter.value,
+            return WriterM<Output>(newWriter.value,
                                        log: newLog)
     }
 }
-extension Writer: CustomStringConvertible {
+extension WriterM: CustomStringConvertible {
     public var description: String {
         """
         value: \(value)
