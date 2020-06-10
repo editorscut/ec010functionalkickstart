@@ -72,8 +72,14 @@ hand.map(threeInARow)
 
 hand.flatMap(threeInARow)
 
+hand >=> threeInARow
+
 ints.map(cardInFreshDeck)
     .flatMap(threeInARow)
+
+ints
+    <^> cardInFreshDeck
+    >=> threeInARow
 
 import PlaygroundSupport
 

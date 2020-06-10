@@ -45,4 +45,8 @@ helloTrunk
 helloTrunk
     .map(emphasize)
     .map(numberOfCharacters)
+
+helloTrunk
+    <^> emphasize
+    <^> numberOfCharacters
 //: [Next](@next)

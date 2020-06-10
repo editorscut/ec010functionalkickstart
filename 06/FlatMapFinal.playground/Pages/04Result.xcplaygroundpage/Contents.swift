@@ -64,6 +64,10 @@ trunkWithPoint
     .flatMap(movingDownInTrunk)
     .flatMap(movingDownInTrunk)
 
+trunkWithPoint
+    >=> movingRightInTrunk
+    >=> movingDownInTrunk
+
 
 func emphasize(_ string: String) -> Result<String, Never> {
     

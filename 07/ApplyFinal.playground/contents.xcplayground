@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<playground version='6.0' target-platform='ios'>
+    <pages>
+        <page name='01TheMagicOfApply'/>
+        <page name='02Array'/>
+        <page name='03Interchange'/>
+        <page name='04Currying'/>
+    </pages>
+</playground>

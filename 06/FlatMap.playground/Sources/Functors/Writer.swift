@@ -16,6 +16,11 @@ extension Writer {
     }
 }
 
+public func <^> <Input, Output>(xs: Writer<Input>,
+                        f: (Input) -> Output) -> Writer<Output> {
+    xs.map(f)
+}
+
 extension Writer: CustomStringConvertible {
     public var description: String {
         """

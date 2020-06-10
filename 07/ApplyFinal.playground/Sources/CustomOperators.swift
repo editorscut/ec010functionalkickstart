@@ -23,12 +23,9 @@ public func >>> <A, B, C> (f: @escaping (A) -> B,
     {x in g(f(x))}
 }
 
-infix operator <^> : Evaluate
 
-public func <^> <Input, Output>(xs: Array<Input>,
-                        f: (Input) -> Output) -> Array<Output> {
-    xs.map(f)
-}
+
+infix operator <^> : Evaluate
 
 
 public func <^> <Input, Output>(xs: Optional<Input>,
@@ -41,12 +38,10 @@ public func <^> <Input, Output, Failure: Error>(xs: Result<Input, Failure>,
     xs.map(f)
 }
 
+
 infix operator >=> : Evaluate
 
-public func >=> <Input, Output>(xs: Array<Input>,
-                        f: (Input) -> Array<Output>) -> Array<Output> {
-    xs.flatMap(f)
-}
+
 
 public func >=> <Input, Output>(xs: Optional<Input>,
                         f: (Input) -> Optional<Output>) -> Optional<Output> {
@@ -57,3 +52,5 @@ public func >=> <Input, Output, Failure>(xs: Result<Input, Failure>,
                         f: (Input) -> Result<Output, Failure>) -> Result<Output, Failure> {
     xs.flatMap(f)
 }
+
+infix operator <*> : Evaluate

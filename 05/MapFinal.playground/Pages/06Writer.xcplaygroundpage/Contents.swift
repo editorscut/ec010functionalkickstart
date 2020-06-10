@@ -13,8 +13,13 @@ extension Writer {
     }
 }
 
+func <^> <Input, Output>(x: Writer<Input>,
+                        f: (Input) -> Output) -> Writer<Output> {
+    x.map(f)
+}
+
 extension Writer: CustomStringConvertible {
-    var description: String {
+    public var description: String {
         """
         value: \(value)
         log: \(log)
@@ -44,5 +49,8 @@ emptyTrunk
     .map(emphasize)
     .map(numberOfCharacters)
 
+emptyTrunk
+    <^> emphasize
+    <^> numberOfCharacters
 
 //: [Next](@next)

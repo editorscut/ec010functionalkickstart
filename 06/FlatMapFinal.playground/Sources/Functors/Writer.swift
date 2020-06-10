@@ -21,6 +21,11 @@ extension Writer {
     }
 }
 
+public func <^> <Input, Output>(xs: Writer<Input>,
+                        f: (Input) -> Output) -> Writer<Output> {
+    xs.map(f)
+}
+
 extension Writer {
     public func flatMap<Output>(_ transform: (Value) -> Writer<Output>)
         -> Writer<Output> {
@@ -29,6 +34,11 @@ extension Writer {
             return Writer<Output>(newWriter.value,
                                        log: newLog)
     }
+}
+
+public func >=> <Input, Output>(x: Writer<Input>,
+                        f: (Input) -> Writer<Output>) -> Writer<Output> {
+    x.flatMap(f)
 }
 extension Writer: CustomStringConvertible {
     public var description: String {

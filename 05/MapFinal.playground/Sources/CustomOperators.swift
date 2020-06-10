@@ -1,6 +1,6 @@
 precedencegroup Evaluate {
     associativity: left
-    higherThan: ComparisonPrecedence
+    higherThan: AssignmentPrecedence
 }
 
 infix operator |> : Evaluate
@@ -39,21 +39,4 @@ public func <^> <Input, Output>(xs: Optional<Input>,
 public func <^> <Input, Output, Failure: Error>(xs: Result<Input, Failure>,
                         f: (Input) -> Output) -> Result<Output, Failure> {
     xs.map(f)
-}
-
-infix operator >=> : Evaluate
-
-public func >=> <Input, Output>(xs: Array<Input>,
-                        f: (Input) -> Array<Output>) -> Array<Output> {
-    xs.flatMap(f)
-}
-
-public func >=> <Input, Output>(xs: Optional<Input>,
-                        f: (Input) -> Optional<Output>) -> Optional<Output> {
-    xs.flatMap(f)
-}
-
-public func >=> <Input, Output, Failure>(xs: Result<Input, Failure>,
-                        f: (Input) -> Result<Output, Failure>) -> Result<Output, Failure> {
-    xs.flatMap(f)
 }

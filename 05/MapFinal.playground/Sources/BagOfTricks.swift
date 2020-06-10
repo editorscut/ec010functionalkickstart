@@ -52,15 +52,6 @@ public func identity<A>(_ x: A) -> A {
     x
 }
 
-infix operator >>> 
-
-public func >>> <A, B, C>(f: @escaping (A) -> B,
-                   g: @escaping (B) -> C) -> (A) -> C {
-    {x in g(f(x))}
-}
-
-
-
 
 public func optionalCardFromFreshDeck(at index: Int) -> Card? {
     guard (0...51).contains(index) else {

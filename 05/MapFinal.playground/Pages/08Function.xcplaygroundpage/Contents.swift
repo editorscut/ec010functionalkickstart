@@ -10,8 +10,8 @@ struct StringFunction<FunctionRange> {
 
 extension StringFunction {
     func map<Output>(_ transform: @escaping (FunctionRange) -> Output)
-                                    -> StringFunction<Output> {
-        StringFunction<Output>{x in transform(self.f(x))}
+        -> StringFunction<Output> {
+            StringFunction<Output>{x in transform(self.f(x))}
     }
 }
 
@@ -59,15 +59,15 @@ struct Reader<E, A> {
 
 extension Reader {
     func map<Output>(_ transform: @escaping (A) -> Output)
-                                    -> Reader<E, Output> {
-        Reader<E, Output>{x in transform(self.f(x))}
+        -> Reader<E, Output> {
+            Reader<E, Output>{x in transform(self.f(x))}
     }
 }
 
 let shout
     = Reader<String, String>{string in
         string.uppercased() + "!"
-    }
+}
 
 let amount = shout.map{string in string.count}
 
@@ -77,5 +77,39 @@ shout("hello")
 amount.f("hello")
 amount("hello")
 
+import UIKit
+
+struct DataReader<DataType> {
+    let read: (Data) -> DataType?
+}
+
+let stringReader
+    = DataReader<String>{data in
+        String(data: data,
+               encoding: .utf8)
+        }
+
+let imageReader
+    = DataReader<UIImage>{data in
+        UIImage(data: data)
+        }
+
+func data(from file: String,
+          withExtension ext: String) -> Data {
+    guard let dataFile
+        = Bundle.main.url(forResource: file,
+                          withExtension: ext),
+        let data = try? Data(contentsOf: dataFile) else {return Data()}
+    return data
+}
+
+stringReader.read(data(from: "Title",
+                       withExtension: "txt"))
+
+stringReader.read(data(from: "Cover",
+                       withExtension: "png"))
+
+imageReader.read(data(from: "Cover",
+                      withExtension: "png"))
 
 //: [Next](@next)

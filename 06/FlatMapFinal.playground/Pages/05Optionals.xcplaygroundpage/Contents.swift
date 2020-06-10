@@ -102,6 +102,12 @@ deckInTrunk
     .flatMap(shuffleDeck(to: 27))
     .flatMap(cutDeck(to: 25))
 
+deckInTrunk
+    >=> shuffleDeck(to: 17)
+    >=> cutDeck(to: 24)
+    >=> shuffleDeck(to: 27)
+    >=> cutDeck(to: 25)
+
 extension Deck {
     func cutDeck(to index: Int) -> Deck? {
         guard index < count && index >= 0 else {return nil}
@@ -121,6 +127,7 @@ deckInTrunk?
     .cutDeck(to: 24)?
     .shuffleDeck(to: 27)?
     .cutDeck(to: 25)
+
 
 
 //: [Next](@next)

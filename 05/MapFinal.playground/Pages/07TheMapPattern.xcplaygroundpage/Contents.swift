@@ -42,7 +42,20 @@ stringArray
     .map(emphasize >>> numberOfCharacters)
 
 
+stringArray
+    <^> emphasize
+    <^> numberOfCharacters
 
+stringArray
+    <^> emphasize
+    >>> numberOfCharacters
+
+
+(stringArray <^> emphasize <^> numberOfCharacters)
+
+    ==
+
+(stringArray <^> emphasize >>> numberOfCharacters)
 
 
 

@@ -87,4 +87,28 @@ anotherEmptyTrunk
 another17Trunk
     .map(cardFromFreshDeck)
 
+anotherHelloTrunk <^> emphasize
+
+anotherHelloTrunk
+    <^> emphasize
+    <^> numberOfCharacters
+
+["hello", "what's", "up"] <^> emphasize
+
+["hello", "what's", "up"]
+    <^> emphasize
+    <^> numberOfCharacters
+
+anotherHelloTrunk
+    <^> emphasize >>> numberOfCharacters
+
+["hello", "what's", "up"]
+    <^> emphasize >>> numberOfCharacters
+
+let composition = emphasize >>> numberOfCharacters
+
+anotherHelloTrunk <^> composition
+
+["hello", "what's", "up"] <^> composition
+
 //: [Next](@next)

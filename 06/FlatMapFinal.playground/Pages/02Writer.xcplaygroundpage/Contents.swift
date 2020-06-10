@@ -63,6 +63,14 @@ pointWriter
     .flatMap(loggingMoveDown)
     .flatMap(loggingMoveDown)
 
+pointWriter
+    >=> loggingMoveRight
+
+pointWriter
+    >=> loggingMoveRight
+    >=> loggingMoveDown
+    >=> loggingMoveDown
+
 func numberOfCharacters(in string: String) -> Writer<Int> {
     Writer<Int>(string.count,
                 log: "There are \(string.count) characters in \(string) \n")
@@ -105,5 +113,13 @@ newDeck
     .flatMap(cutDeck(to: 24))
     .flatMap(shuffleDeck(to: 27))
     .flatMap(cutDeck(to: 25))
+
+hello >=> numberOfCharacters
+
+newDeck
+    >=> shuffleDeck(to: 17)
+    >=> cutDeck(to: 24)
+    >=> shuffleDeck(to: 27)
+    >=> cutDeck(to: 25)
 
 //: [Next](@next)
