@@ -6,21 +6,50 @@
 
 numberOfCharacters(in: "Hello")
 
-func toF(_ c: Int) -> Double {
-    Double(c) * 9 / 5 + 32
+func hello(_ f: (String) -> Int) -> Int {
+    f("Hello")
 }
 
-public func compose<A, B, C> (g: @escaping (B) -> C) ->
-                           (@escaping (A) -> B) -> (A) -> C {
-                            {(f: @escaping (A) -> B) in {x in g(f(x))}}
-}
+[hello] <*> [numberOfCharacters]
 
-[compose] <*> [toF] <*> [numberOfCharacters] <*> ["Hello"]
-
-[toF] <*> ([numberOfCharacters] <*> ["Hello"])
+[hello(numberOfCharacters)]
 
 [numberOfCharacters] <*> ["Hello"]
+== [{f in f("Hello")}] <*> [numberOfCharacters]
 
-[{f in
-    f("Hello")}] <*> [numberOfCharacters]
+
+
+func toFahrenheit(_ celcius: Int) -> Double {
+    Double(celcius) * 9 / 5 + 32
+}
+
+func helloToFahrenheit(_ f: (String) -> Int) -> Double {
+    toFahrenheit(f("Hello"))
+}
+
+[helloToFahrenheit] <*> [numberOfCharacters]
+
+[helloToFahrenheit] <*> [uniqueCharacters]
+
+func stringToFahrenheit(_ f: @escaping (String) -> Int)
+                                        -> (String) -> Double {
+     {string in toFahrenheit(f(string))}
+}
+
+[stringToFahrenheit] <*> [numberOfCharacters]
+
+[stringToFahrenheit]
+    <*> [numberOfCharacters]
+    <*> ["Hello"]
+
+
+[stringToFahrenheit]
+    <*> [numberOfCharacters]
+    <*> ["This", "is", "amazing"]
+
+[stringToFahrenheit]
+    <*> [numberOfCharacters, uniqueCharacters]
+    <*> ["This", "is", "amazing"]
+
+
 //: [Next](@next)

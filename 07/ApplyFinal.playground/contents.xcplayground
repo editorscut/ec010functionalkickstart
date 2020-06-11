@@ -2,7 +2,7 @@
 <playground version='6.0' target-platform='ios'>
     <pages>
         <page name='01TheMagicOfApply'/>
-        <page name='02Array'/>
+        <page name='02Arrays'/>
         <page name='03Interchange'/>
         <page name='04Currying'/>
     </pages>
