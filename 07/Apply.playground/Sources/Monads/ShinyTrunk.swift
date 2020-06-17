@@ -45,6 +45,9 @@ public func >=> <Input, Output>(xs: ShinyTrunk<Input>,
     xs.flatMap(f)
 }
 
+
+
+
 extension ShinyTrunk: CustomStringConvertible {
     public var description: String {
         let type = WhatsInside.self

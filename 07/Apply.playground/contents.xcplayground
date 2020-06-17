@@ -1,4 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<playground version='5.0' target-platform='ios'>
-    <timeline fileName='timeline.xctimeline'/>
+<playground version='6.0' target-platform='ios'>
+    <pages>
+        <page name='01TheMagicOfApply'/>
+        <page name='02Arrays'/>
+        <page name='03Interchange'/>
+        <page name='04Currying'/>
+        <page name='05Optionals'/>
+        <page name='06BetweenFunctorAndMonad'/>
+        <page name='07Result'/>
+        <page name='08Validated'/>
+    </pages>
 </playground>

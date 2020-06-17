@@ -9,7 +9,6 @@ strings
 
 Array<(String) -> Int>(just: numberOfCharacters) <*> strings
 
-
 let functions = [numberOfCharacters, uniqueCharacters]
 
 strings.apply(functions)

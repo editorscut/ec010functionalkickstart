@@ -1,15 +1,5 @@
 //: [Previous](@previous)
 
-func toFahrenheit(_ c: Int) -> Double {
-    Double(c) * 9 / 5 + 32
-}
-
-func helloToFahrenheit(_ f: (String) -> Int) -> Double {
-    toFahrenheit(f("Hello"))
-}
-// end setup
-
-
 func stringToFahrenheit(_ string: String,
                         using f: (String) -> Int) -> Double {
     toFahrenheit(f(string))

@@ -5,5 +5,9 @@
         <page name='02Arrays'/>
         <page name='03Interchange'/>
         <page name='04Currying'/>
+        <page name='05Optionals'/>
+        <page name='06BetweenFunctorAndMonad'/>
+        <page name='07Result'/>
+        <page name='08Validated'/>
     </pages>
 </playground>

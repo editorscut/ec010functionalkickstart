@@ -18,15 +18,6 @@ func hello(_ f: (String) -> Int) -> Int {
 == [{f in f("Hello")}] <*> [numberOfCharacters]
 
 
-
-func toFahrenheit(_ celcius: Int) -> Double {
-    Double(celcius) * 9 / 5 + 32
-}
-
-func helloToFahrenheit(_ f: (String) -> Int) -> Double {
-    toFahrenheit(f("Hello"))
-}
-
 [helloToFahrenheit] <*> [numberOfCharacters]
 
 [helloToFahrenheit] <*> [uniqueCharacters]
