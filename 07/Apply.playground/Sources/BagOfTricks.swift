@@ -34,11 +34,4 @@ public func uniqueCharacters(in string: String) -> Int {
     Set(string).count
 }
 
-public func toFahrenheit(_ celcius: Int) -> Double {
-    Double(celcius) * 9 / 5 + 32
-}
-
-public func helloToFahrenheit(_ f: (String) -> Int) -> Double {
-    toFahrenheit(f("Hello"))
-}
 
