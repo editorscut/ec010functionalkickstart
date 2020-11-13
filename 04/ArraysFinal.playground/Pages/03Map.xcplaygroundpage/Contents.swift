@@ -40,6 +40,8 @@ words
 
 words.map(\.count)
 
+words.myMap(\.count)
+
 words
     .map(\.count)
     .map{count in count - 1}

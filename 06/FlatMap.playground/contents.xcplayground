@@ -9,7 +9,5 @@
         <page name='06TheShape'/>
         <page name='07Just'/>
         <page name='08Monoids'/>
-        <page name='09Reader'/>
-        <page name='10State'/>
     </pages>
 </playground>

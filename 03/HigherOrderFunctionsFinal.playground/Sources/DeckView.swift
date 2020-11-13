@@ -10,14 +10,13 @@ public struct DeckView {
 
 extension DeckView: View {
     public var body: some View {
-        return VStack{
+        VStack{
             List(deck){card in
-                HStack {
-                    Spacer()
-                    Text(card.description).foregroundColor(card.color)
-                    Spacer()
-                }
-            }.padding()
+                Text(card.description).foregroundColor(card.color)
+            }.frame(minWidth: 150,
+                    maxWidth: .infinity,
+                    minHeight: 500,
+                    maxHeight: .infinity)
         }
     }
 }

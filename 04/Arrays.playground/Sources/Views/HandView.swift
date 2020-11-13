@@ -22,6 +22,10 @@ extension HandView: View {
         .rotationEffect(self.totalDegrees)
         .offset(x: self.xHandOffset,
                 y: 0)
+        .frame(minWidth: 800,
+                maxWidth: .infinity,
+                minHeight: 800,
+                maxHeight: .infinity)
     }
 }
 

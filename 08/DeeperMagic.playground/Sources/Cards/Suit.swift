@@ -37,6 +37,7 @@ extension Suit {
     }
 }
 
+// not needed with Swift 5.3
 
 extension Suit: Equatable, Comparable {
     public static func <(lhs: Suit, rhs: Suit) -> Bool {

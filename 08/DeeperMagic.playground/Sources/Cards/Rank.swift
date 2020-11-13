@@ -33,6 +33,7 @@ extension Rank {
 }
 
 
+// not needed with Swift 5.3
 
 extension Rank: Equatable, Comparable {
     public static func <(lhs: Rank, rhs: Rank) -> Bool {

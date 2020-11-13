@@ -33,25 +33,12 @@ changeRank(of: yourCard,
 
 yourCard
 
-//func incrementRank() -> Rank {
-//    if var index
-//        = ranks.firstIndex(of: yourCard.rank) {
-//        index = (index + 1) % numberOfRanks
-//        changeRank(of: yourCard,
-//                   to: ranks[index])
-//    }
-//    return yourCard.rank
-//}
-
 func incrementRank() -> Rank {
-    if var index
-        = ranks.firstIndex(of: yourCard.rank) {
-        index += 1
-        if index == numberOfRanks {index = 0}
-        changeRank(of: yourCard,
-                   to: ranks[index])
-    }
-    return yourCard.rank
+  let index = ranks.firstIndex(of: yourCard.rank) ?? 0
+  let rank = ranks[(index + 1) % numberOfRanks]
+  changeRank(of: yourCard,
+             to: rank)
+  return rank
 }
 
 yourCard
